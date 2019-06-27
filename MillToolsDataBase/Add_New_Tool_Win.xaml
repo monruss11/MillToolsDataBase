@@ -1,0 +1,76 @@
+﻿ <Window x:Class="MillToolsDataBase.Add_New_Tool_Win"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MillToolsDataBase"
+        mc:Ignorable="d"
+        Title="Add New Tool" Height="450" Width="830" ResizeMode="NoResize" >
+    <Window.Resources>
+        <Style x:Key="LabelStyle" TargetType="Label" >
+            <Setter Property="Height" Value="auto" />
+            <Setter Property="Width" Value="100" />
+            <Setter Property="Margin" Value="7" />
+            <Setter Property="VerticalAlignment" Value="Top" />
+            <Setter Property="HorizontalContentAlignment" Value="Center" />
+        </Style>
+        <Style x:Key="TextBoxStyle" TargetType="TextBox" >
+            <Setter Property="Height" Value="auto" /> <Setter Property="Width" Value="100" /> <Setter Property="Margin" Value="7" />  
+            <Setter Property="FontSize" Value="18"  />  
+            <Setter Property="VerticalAlignment" Value="Bottom" /> <Setter Property="HorizontalContentAlignment" Value="Center" /> <Setter Property="VerticalContentAlignment" Value="Center" /> 
+            <Setter Property="BorderThickness" Value="3" />
+        </Style>
+    </Window.Resources>
+    <Grid    >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition ></ColumnDefinition>
+            <ColumnDefinition ></ColumnDefinition>
+            <ColumnDefinition ></ColumnDefinition>
+            <ColumnDefinition ></ColumnDefinition>
+            <ColumnDefinition ></ColumnDefinition>
+         </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            
+        </Grid.RowDefinitions>
+        <!--string type; float diametr; int length; int cut_lenght; float corner_radius;
+		DateTime date_receiving, date_issuing; int quantity_receiving; int quantity_issuing;-->
+
+        <!--<Label Content="Tool ID" Grid.Column="0" Grid.Row="1"  Style="{StaticResource LabelStyle}" />-->
+        <Label Content="Type" Grid.Column="0" Grid.Row="1"  Style="{StaticResource LabelStyle}" />
+        <Label Content="Diametr" Grid.Column="1" Grid.Row="1" Style="{StaticResource LabelStyle}" />
+        <Label Content="Lenght" Grid.Column="2" Grid.Row="1" Style="{StaticResource LabelStyle}" />
+        <Label Content="Cut Lenght" Grid.Column="3" Grid.Row="1" Style="{StaticResource LabelStyle}" />
+        <Label Content="Corner Radius" Grid.Column="4" Grid.Row="1" FontSize="14" FontStretch="ExtraCondensed" Style="{StaticResource LabelStyle}" />
+        <Label Content="Tool In" Grid.Column="5" Grid.Row="1" Style="{StaticResource LabelStyle}"  />
+            
+           
+
+        <!--<TextBox Name="txtToolID"  Grid.Column="0" Grid.Row="1" Style="{StaticResource TextBoxStyle}" IsReadOnly="True" />-->
+        <TextBox Name="txtType"   Grid.Column="0" Grid.Row="1" PreviewTextInput="TxtType_PreviewTextInput" PreviewKeyDown="Grid_PreviewKeyDown" 
+                 Style="{StaticResource TextBoxStyle}" />
+        <TextBox Name="txtDiametr" Grid.Column="1" Grid.Row="1"  PreviewTextInput="Grid_PreviewTextInput" PreviewKeyDown="Grid_PreviewKeyDown" 
+                 Style="{StaticResource TextBoxStyle}" />
+        <TextBox Name="txtLength" Grid.Column="2" Grid.Row="1" PreviewTextInput="Grid_PreviewTextInput" PreviewKeyDown="Grid_PreviewKeyDown" 
+                 Style="{StaticResource TextBoxStyle}"  />
+        <TextBox Name="txtCut_length" Grid.Column="3" Grid.Row="1" PreviewTextInput="Grid_PreviewTextInput" PreviewKeyDown="Grid_PreviewKeyDown"
+                 Style="{StaticResource TextBoxStyle}" />
+        <TextBox Name="txtCorner_radius" Grid.Column="4" Grid.Row="1" PreviewTextInput="TxtCorner_radius_PreviewTextInput" PreviewKeyDown="Grid_PreviewKeyDown"
+                 Style="{StaticResource TextBoxStyle}" />
+        <TextBox Name="txtQuantity_receiving" Grid.Column="5" Grid.Row="1" PreviewTextInput="Grid_PreviewTextInput" PreviewKeyDown="Grid_PreviewKeyDown"
+                 Style="{StaticResource TextBoxStyle}" />
+       <!-- <TextBox Name="txtQuantity_issuing" Grid.Column="6" Grid.Row="1" Style="{StaticResource TextBoxStyle}" /> 
+        <Label Content="Tool Out" Grid.Column="6" Grid.Row="1" Style="{StaticResource LabelStyle}" />-->
+        <DatePicker   Name="Calendar" SelectedDateChanged="Calendar_SelectedDateChanged" Grid.Column="6" Grid.Row="1"
+                      Language="english" SelectedDateFormat="Short"
+                      Focusable="False"   HorizontalAlignment="Center" VerticalAlignment="Bottom"  Margin="10"/>
+        <Button Name="Add_Tool" Content="Add Tool" FontWeight="Heavy" Click="Add_Tool_Click" Grid.Column="2" Grid.Row="5" Height="40" Width="110" />
+        <Button Name ="Close_ToolWindow" Content="Close" Click="Close_ToolWindow_Click" FontWeight="Heavy"  Grid.Column="4" Grid.Row="5" Height="40" Width="110" />
+    </Grid>
+</Window>

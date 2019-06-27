@@ -1,0 +1,65 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Xml;
+using System.IO;
+
+namespace MillToolsDataBase
+{
+	public class WriteXML
+	{
+		internal string filename;
+		 public  WriteXML() //!!!!
+         { filename = "e:/Learn_Programms/Programming/C#/Projects_C#/MillToolsDataBase/tooldatabase.xml"; }
+		
+		public void writetofile(List<ToolsDataBase.ToolData> toolList)
+		{
+			 XmlDocument xDoc = new XmlDocument(); 
+			int i = 0;
+			if ( System.IO.File.Exists(filename)==false || System.IO.File.ReadAllText(filename)=="")
+			{
+				
+			    XmlElement toolsDataBase = xDoc.CreateElement("ToolsDataBase"); 
+				xDoc.CreateComment("uraaaaa");
+				xDoc.AppendChild(toolsDataBase);
+				XmlNode xRoot = xDoc.DocumentElement;  
+				for (i = 0; i < toolList.Count; i++)
+				{  XmlElement toolData = xDoc.CreateElement("ToolData"); 
+				   toolsDataBase.AppendChild(toolData);
+				   XmlElement toolID = xDoc.CreateElement("toolID");  toolID.InnerText = toolList[i].ID.ToString(); toolData.AppendChild(toolID);
+				   XmlElement toolType = xDoc.CreateElement("type");  toolType.InnerText = toolList[i].type; toolData.AppendChild(toolType);
+				   XmlElement toolDiametr = xDoc.CreateElement("diametr"); toolDiametr.InnerText = toolList[i].diametr.ToString(); toolData.AppendChild(toolDiametr);
+				} // for
+				xDoc.Save(filename);
+			}
+			else
+			{ 
+				xDoc.Load(filename);
+			   XmlNode xRoot = xDoc.DocumentElement;
+              	for (i = 0; i < toolList.Count; i++)
+				{   XmlElement toolData = xDoc.CreateElement("ToolData"); 
+					xRoot.AppendChild(toolData);
+				    XmlElement toolID = xDoc.CreateElement("toolID");  toolID.InnerText = toolList[i].ID.ToString(); toolData.AppendChild(toolID);
+				   XmlElement toolType = xDoc.CreateElement("type");  toolType.InnerText = toolList[i].type; toolData.AppendChild(toolType);
+				   XmlElement toolDiametr = xDoc.CreateElement("diametr"); toolDiametr.InnerText = toolList[i].diametr.ToString(); toolData.AppendChild(toolDiametr);
+				} // for
+				 xDoc.Save(filename);
+			} //else
+		}
+         public int readIDfromXML()
+		{
+			XmlTextReader xmlReader = new XmlTextReader(filename);
+			string nodename; int i = 0;
+			while (xmlReader.Read())
+			{
+				nodename = xmlReader.Name;
+				if (nodename == "toolID") i=Convert.ToInt32(xmlReader.ReadString()); 
+				//{ toolList.Last t[i].value_name = xmlReader.ReadString(); }
+				//{ arrDat[i].value = (float)Convert.ChangeType(xmlReader.ReadString(), typeof(float)); i++; }
+			}
+			return i;			
+		}
+	}
+}
