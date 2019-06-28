@@ -57,7 +57,9 @@ namespace MillToolsDataBase
 		private void RemoveTool_Click(object sender, RoutedEventArgs e)
 		{
 			int index=dataGrid_ToolsDataBase.SelectedIndex;
-			index=Convert.ToInt32(dataGrid_ToolsDataBase.CurrentCell.Item);
+			var intTried = Convert.ChangeType(dataGrid_ToolsDataBase.SelectedItem, typeof(int)) as int?;
+			//int iiii =Convert.ToInt32( dataGrid_ToolsDataBase.SelectedItem);
+			index=(int)(dataGrid_ToolsDataBase.CurrentCell.Item);
 			//dataSet.Tables[0].Rows[0].IndexOf() = "5";
 			//int i=dataGrid_ToolsDataBase.CurrentColumn.GetCellContent;
 			//dataSet.Tables[0]..Rows.Contains. .FindName("quantity_receiving");
