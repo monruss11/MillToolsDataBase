@@ -7,21 +7,21 @@
     <length>9</length>
     <cut_length>4</cut_length>
     <corner_radius>1</corner_radius>
-    <quantity_receiving>5</quantity_receiving>
+    <quantity_receiving>3</quantity_receiving>
     <date_receiving>22/5/2019</date_receiving>
   </ToolData>
   <ToolData>
     <toolID>3</toolID>
     <type>rtwrywery</type>
     <diametr>12</diametr>
-    <length>55</length>
-    <cut_length>15</cut_length>
+    <length>75</length>
+    <cut_length>25</cut_length>
     <corner_radius>1</corner_radius>
     <quantity_receiving>4</quantity_receiving>
     <date_receiving>10/5/2019</date_receiving>
   </ToolData>
   <ToolData>
-    <toolID>4</toolID>
+    <toolID>11</toolID>
     <type>werger</type>
     <diametr>10</diametr>
     <length>55</length>
@@ -41,13 +41,33 @@
     <date_receiving>4/6/2019</date_receiving>
   </ToolData>
   <ToolData>
-    <toolID>6</toolID>
-    <type>jjj</type>
-    <diametr>6</diametr>
-    <length>9</length>
-    <cut_length>4</cut_length>
+    <toolID>7</toolID>
+    <type>EMill</type>
+    <diametr>8</diametr>
+    <length>50</length>
+    <cut_length>12</cut_length>
+    <corner_radius>1</corner_radius>
+    <quantity_receiving>7</quantity_receiving>
+    <date_receiving>21/5/2019</date_receiving>
+  </ToolData>
+  <ToolData>
+    <toolID>8</toolID>
+    <type>ghktyuo</type>
+    <diametr>8</diametr>
+    <length>45</length>
+    <cut_length>10</cut_length>
     <corner_radius>1</corner_radius>
     <quantity_receiving>2</quantity_receiving>
-    <date_receiving>03/09/2000</date_receiving>
+    <date_receiving>15/5/2019</date_receiving>
+  </ToolData>
+  <ToolData>
+    <toolID>9</toolID>
+    <type>egweg</type>
+    <diametr>6</diametr>
+    <length>55</length>
+    <cut_length>12</cut_length>
+    <corner_radius>0,3</corner_radius>
+    <quantity_receiving>3</quantity_receiving>
+    <date_receiving>5/6/2019</date_receiving>
   </ToolData>
 </ToolsDataBase>

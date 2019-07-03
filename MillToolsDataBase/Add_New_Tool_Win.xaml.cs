@@ -32,8 +32,10 @@ namespace MillToolsDataBase
 			ToolsDataBase.toolData.ID = writeXML.readIDfromXML();
 			else { MessageBox.Show("File not exist /n/r Create file"); ToolsDataBase.toolData.ID = 0; }
 			txtType.Focus();
+			Calendar.Tag = "gweg";//.DisplayDate.Date.GetDateTimeFormats();
 		}
-		
+
+		#region Button Events
 		private void Close_ToolWindow_Click(object sender, RoutedEventArgs e)
 		{
 			this.Close();
@@ -62,6 +64,9 @@ namespace MillToolsDataBase
 				else { MessageBox.Show("Corner radius big more then half diametr"); txtCorner_radius.Focus(); txtCorner_radius.Text = ""; }
 			}
 		}
+#endregion Butto Events
+//==================================================================
+#region Events
 		private void Grid_PreviewTextInput(object sender, TextCompositionEventArgs e)
 		{
 			short value;
@@ -87,7 +92,7 @@ namespace MillToolsDataBase
 			Calendar.Text = "ttt"; 
 			//ToolsDataBase.toolData.date_receiving = Calendar.SelectedDate.Value.Day.ToString()+"/"+Calendar.SelectedDate.Value.Month.ToString()+"/"+Calendar.SelectedDate.Value.Year.ToString();
 		}
-
+		#endregion Events
 		//private void TxtType_LostFocus(object sender, RoutedEventArgs e)
 		//{
 		//	if (txtType.Text == "")

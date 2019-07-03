@@ -14,7 +14,7 @@ namespace MillToolsDataBase
 		 XmlDocument  xDoc = new XmlDocument();
 		ToolsDataBase.ToolData stc_toolData;
 		 public  WriteReadXML() //!!!!
-         { filename = "e:/Learn_Programms/Programming/C#/Projects_C#/MillToolsDataBase/tooldatabase.xml"; }
+         { filename = "c:/tooldatabase.xml"; }
 		
 	   public void writeToXML(ToolsDataBase.ToolData stc_toolData)
 		{

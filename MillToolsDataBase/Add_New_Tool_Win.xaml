@@ -20,6 +20,17 @@
             <Setter Property="VerticalAlignment" Value="Bottom" /> <Setter Property="HorizontalContentAlignment" Value="Center" /> <Setter Property="VerticalContentAlignment" Value="Center" /> 
             <Setter Property="BorderThickness" Value="3" />
         </Style>
+        <Style x:Key="ButtonStyle" TargetType="Button" >
+            <Setter Property="Height" Value="auto" />
+            <Setter Property="Width" Value="auto" />
+            <Setter Property="Margin" Value="7" />
+            <Setter Property="FontSize" Value="12"  />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalContentAlignment" Value="Center" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+            <Setter Property="BorderThickness" Value="3" />
+        </Style>
+        
     </Window.Resources>
     <Grid    >
         <Grid.ColumnDefinitions>
@@ -68,9 +79,11 @@
        <!-- <TextBox Name="txtQuantity_issuing" Grid.Column="6" Grid.Row="1" Style="{StaticResource TextBoxStyle}" /> 
         <Label Content="Tool Out" Grid.Column="6" Grid.Row="1" Style="{StaticResource LabelStyle}" />-->
         <DatePicker   Name="Calendar" SelectedDateChanged="Calendar_SelectedDateChanged" Grid.Column="6" Grid.Row="1"
-                      Language="english" SelectedDateFormat="Short"
+                      Language="english" SelectedDateFormat="Short" 
                       Focusable="False"   HorizontalAlignment="Center" VerticalAlignment="Bottom"  Margin="10"/>
-        <Button Name="Add_Tool" Content="Add Tool" FontWeight="Heavy" Click="Add_Tool_Click" Grid.Column="2" Grid.Row="5" Height="40" Width="110" />
-        <Button Name ="Close_ToolWindow" Content="Close" Click="Close_ToolWindow_Click" FontWeight="Heavy"  Grid.Column="4" Grid.Row="5" Height="40" Width="110" />
+        <Button Name="Add_Tool" Content="Add Tool" FontWeight="Heavy" Click="Add_Tool_Click" Grid.Column="2" Grid.Row="5" Style="{StaticResource ButtonStyle}"
+                Height="40" />
+        <Button Name ="Close_ToolWindow" Content="Close" Click="Close_ToolWindow_Click" FontWeight="Heavy"  Grid.Column="4" Grid.Row="5" Style="{StaticResource ButtonStyle}"
+                Height="40"  />
     </Grid>
 </Window>

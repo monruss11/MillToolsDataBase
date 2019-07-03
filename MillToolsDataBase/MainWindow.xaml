@@ -6,9 +6,33 @@
         xmlns:local="clr-namespace:MillToolsDataBase"
         mc:Ignorable="d"
         Title="Tools Bank" Height="450" Width="800">
-    <DockPanel  >
+    <Window.Resources>
+        <Style x:Key="ButtonStyle" TargetType="Button" >
+            <Setter Property="Height" Value="auto" />
+            <Setter Property="Width" Value="100" />
+            <Setter Property="Margin" Value="7" />
+            <Setter Property="Padding" Value="2"/>
+            <Setter Property="FontSize" Value="12"  />
+            <Setter Property="VerticalAlignment" Value="Bottom" />
+            <Setter Property="HorizontalContentAlignment" Value="Center" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+            <Setter Property="BorderThickness" Value="3" />
+        </Style>
+        
+        
+
+        <!--<ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Dictionary1.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>-->
+    </Window.Resources>
+   
+        <DockPanel  >
         <Grid>
             <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
@@ -17,13 +41,30 @@
                 <RowDefinition Height="95*"></RowDefinition>
                 <RowDefinition Height="316*"></RowDefinition>
             </Grid.RowDefinitions>
-            <Button Name="NewTool" Content="New Tool" Click="NewTool_Click" DockPanel.Dock="Top"  Grid.Row="0" Grid.Column="0" VerticalAlignment="Top" Height="25"  Width="auto" Margin="7,7,6.8,0" ></Button>
-            <Button Name="RemoveTool" Content="Remove Tool" Click="RemoveTool_Click" Grid.Row="0" Grid.Column="1" VerticalAlignment="Top" Height="25" Width="auto" Margin="7.2,7,6.8,0" Padding="2"></Button>
-            <Button Name="ShowDataSetToolsDataBase" Content="Show Tools Data Base" Click="ShowDataSetToolsDataBase_Click" DockPanel.Dock="Top" Grid.Row="0" Grid.Column="2" VerticalAlignment="Top" Height="25" Width="auto" Margin="7,7,7,7" Padding="2"/>
-            <DataGrid  Name="dataGrid_ToolsDataBase" Grid.Row="1"  Grid.ColumnSpan="3" Grid.RowSpan="2" IsReadOnly="False"  HorizontalAlignment="Center"   
+            <Button Name="btnOpenFile" Content="Open File Tools Data" Click="btnOpenFile_Click" DockPanel.Dock="Top"  Grid.Row="0" Grid.Column="0" Style="{StaticResource ButtonStyle}"
+                    VerticalAlignment="Top" Height="25"  Width="auto"  ></Button>
+            <Button Name="btnNewTool" Content="New Tool" Click="btnNewTool_Click" DockPanel.Dock="Top"  Grid.Row="0" Grid.Column="1" Style="{StaticResource ButtonStyle}"
+                    VerticalAlignment="Top" Height="25"  Width="auto"  ></Button>
+            <Button Name="btnRemoveTool" Content="Remove Tool" Click="btnRemoveTool_Click" Grid.Row="0" Grid.Column="2" Style="{StaticResource ButtonStyle}"
+                    VerticalAlignment="Top" Height="25" Width="auto" ></Button>
+            <Button Name="btnSaveChange" Content="Save Change" Click="btnSaveChange_Click" Grid.Row="0" Grid.Column="3" Style="{StaticResource ButtonStyle}"
+                    VerticalAlignment="Top" Height="25" Width="auto" ></Button>
+            <Button Name="btnShowDataSetToolsDataBase" Content="Show Tools Data Base" Click="btnShowDataSetToolsDataBase_Click" DockPanel.Dock="Top" Grid.Row="0" Grid.Column="4" 
+                    Style="{StaticResource ButtonStyle}"
+                    VerticalAlignment="Top" Height="25" Width="auto" />
+            <DataGrid  Name="dataGrid_ToolsDataBase" Grid.Row="1"  Grid.ColumnSpan="5" Grid.RowSpan="3" HorizontalAlignment="Center"   
                        Margin="20,20,20,20" VerticalAlignment="Top" 
-                      MinColumnWidth="30"   MinRowHeight="20"/>
-
+                      MinColumnWidth="30"   MinRowHeight="20" SelectionMode="Single" 
+                       BeginningEdit="DataGrid_ToolsDataBase_BeginningEdit"
+                       PreviewTextInput="DataGrid_ToolsDataBase_PreviewTextInput" >
+                <!--SelectionChanged="DataGrid_ToolsDataBase_SelectionChanged"-->
+                  
+                 <!--<DataGrid.Columns>
+                    <DataGridTextColumn Header="ID" Binding="{Binding Path=toolID}" FontFamily="Arial" FontStyle="Italic" />
+                    <DataGridTextColumn Header="Tool Type" Binding="{Binding Path=type}" FontFamily="Arial" FontWeight="Bold" />
+                </DataGrid.Columns>-->
+                
+                </DataGrid>
         </Grid>
         <!--<TextBlock Name="Txt" Height="360.8" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>-->
     </DockPanel>
